@@ -1,0 +1,12 @@
+<tr id=<%= "area_#{area.id}" %>>
+    <td><%= area.id %></td>
+	<td><%= area.nombre %></td>
+	<td><%= area.sigla %></td>
+	<td> 
+	  <%= link_to  image_tag('Crud/mostrar.png'), area, :remote => true, :class => 'btn btn-mini' %>
+      <%= link_to image_tag('Crud/editar1.png', :title => "Editar Equipos"), edit_area_path(area), :remote => true,
+          :class => 'btn btn-mini'%>
+	</td>
+</tr>
+
+

@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  estudiante_id: 
+  fecha_inicio: 2014-01-20
+  fecha_fin: 2014-01-20
+  descripcion: MyString
+  objetivo: MyString
+  nombre: MyString
+  nombreproyecto: MyString
+  categoria_id: 
+  actestado_id: 
+  asignar_proy_id: 
+  actividad_id: 
+  asignar_proy_id: 
+
+two:
+  estudiante_id: 
+  fecha_inicio: 2014-01-20
+  fecha_fin: 2014-01-20
+  descripcion: MyString
+  objetivo: MyString
+  nombre: MyString
+  nombreproyecto: MyString
+  categoria_id: 
+  actestado_id: 
+  asignar_proy_id: 
+  actividad_id: 
+  asignar_proy_id: 

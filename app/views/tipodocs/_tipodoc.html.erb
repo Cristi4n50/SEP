@@ -1,0 +1,12 @@
+<tr id=<%= "tipodoc_#{tipodoc.id}" %>>
+	<td><%= tipodoc.id %></td>
+	<td><%= tipodoc.sigla %></td>
+	<td><%= tipodoc.descripcion %></td>
+	<td> 
+		<%= link_to  image_tag('Crud/mostrar.png'), tipodoc, :remote => true, :class => 'btn btn-mini' %>
+        <%= link_to image_tag('Crud/editar1.png', :title => "Editar Equipos"), edit_tipodoc_path(tipodoc), :remote => true,
+          :class => 'btn btn-mini'%>
+	</td>
+</tr>
+
+

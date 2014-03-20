@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  fecha_ocurrencia: 2013-11-21
+  descripcion: MyString
+  implicados: MyString
+  user_id: 
+  actEstado_id: 
+
+two:
+  fecha_ocurrencia: 2013-11-21
+  descripcion: MyString
+  implicados: MyString
+  user_id: 
+  actEstado_id: 

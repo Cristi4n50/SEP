@@ -1,0 +1,58 @@
+<div class="modal-header">
+  <button  class="close" onclick="$.lazybox.close()">&times;</button>
+  <h3>Estudiantes</h3>
+</div>
+  <div class="modal-body">
+    <table class="table table-striped table-condensed">
+      <tr>
+        <td><b class="pull-right">ID: </b></td>
+        <td><%= @estudiante.id %></td>
+      </tr>
+      <tr>
+        <td><b class="pull-right">Primer Nombre: </b></td>
+        <td><%= @estudiante.nombre1 %></td>
+      </tr>
+      <tr>
+        <td><b class="pull-right">Nombre: </b></td>
+        <td><%= @estudiante.nombre2 %></td>
+      </tr>
+       <tr>
+        <td><b class="pull-right">PrimerApellido: </b></td>
+        <td><%= @estudiante.apellido1 %></td>
+      </tr>
+      <tr>
+        <td><b class="pull-right">SegundoApellido: </b></td>
+        <td><%= @estudiante.apellido2 %></td>
+      </tr>
+      <tr>
+        <td><b class="pull-right">Genero: </b></td>
+        <td><%= @estudiante.genero %></td>
+      </tr>
+      
+       <tr>
+        <td><b class="pull-right">TipoDocumento: </b></td>
+        <td><%= @estudiante.tipodoc.sigla %></td>
+      </tr>
+      <tr>
+        <td><b class="pull-right">#Documento: </b></td>
+        <td><%= @estudiante.documento %></td>
+      </tr>
+      <tr>
+        <td><b class="pull-right">TipoPracticas: </b></td>
+        <td><%= @estudiante.tipopractica.nombre %></td>
+      </tr>
+       <tr>
+        <td><b class="pull-right">Fichas: </b></td>
+        <td><%= @estudiante.ficha.numero %></td>
+      </tr>
+       <tr>
+        <td><b class="pull-right">Jefes: </b></td>
+        <td><%= @estudiante.jefe.nombres %></td>
+      </tr>
+    </table>
+    <div class="modal-footer">
+      <a onclick="$.lazybox.close()">&times;</a>
+    </div>           
+</div>
+
+

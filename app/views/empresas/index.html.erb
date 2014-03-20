@@ -1,0 +1,44 @@
+<div id="example" class="page-header">
+    <h3>Empresas</h3>
+    <div class="navbar">
+    <div class="navbar-inner">
+    <li id='buscar' class="brand" href="#">Buscar</li>
+      <div class="row">
+        <div class="span6">
+          <form method="GET" class="form-inline" >
+            <input id='buscar' name="buscar" class="search-query" type="text" placeholder="Buscar" >
+            <button id='buscar' type="submit" class="btn btn-primary"><i class="icon-search icon-white"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <table class="table table-hover"  >
+    <thead>
+      <tr>
+        <th >id</th>
+        <th >Nombres</th>
+        <th >Nit</th>
+        <th >Dv</th>  
+        <th >Direccion</th> 
+        <th >Telefono</th>
+        <th >Fax</th>
+        <th >Email</th>  
+        <th >PaginaWeb</th>     
+      </tr>
+    </thead>
+    <tbody><%= render @empresas %></tbody>
+    <tfoot>
+      <tr>
+        <td>
+          <%= link_to image_tag('Crud/save.png'),  new_empresa_path,  :remote => true %>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+    <div id="pagination">
+      <ul class="pagination">
+        <%= will_paginate @empresas, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente&raquo;' %>
+      </ul>
+    </div>

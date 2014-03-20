@@ -1,0 +1,37 @@
+<div class="modal-header">
+  <button  class="close" onclick="$.lazybox.close()">&times;</button>
+  <h3>Novedades</h3>
+</div>
+  <div class="modal-body">
+    <table class="table table-striped table-condensed">
+      <tr>
+        <td><b class="pull-right">ID: </b></td>
+        <td><%= @novedad.id %></td>
+      </tr>
+      <tr>
+        <td><b class="pull-right">FechaOcurrencia: </b></td>
+        <td><%= @novedad.fecha_ocurrencia %></td>
+      </tr>
+      <tr>
+        <td><b class="pull-right">Usuarios: </b></td>
+        <td><%= @novedad.user.username %></td>
+      </tr>
+       <tr>
+        <td><b class="pull-right">Implicados: </b></td>
+        <td><%= @novedad.implicados %></td>
+      </tr>
+      <tr>
+        <td><b class="pull-right">ActualEstado: </b></td>
+        <td><%= @novedad.actestado.nombre %></td>
+      </tr>
+      <tr>
+        <td><b class="pull-right">Descripción: </b></td>
+        <td><%= @novedad.descripcion %></td>
+      </tr>
+    </table>
+    <div class="modal-footer">
+      <a onclick="$.lazybox.close()">&times;</a>
+    </div>           
+</div>
+
+

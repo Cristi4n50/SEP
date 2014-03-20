@@ -1,0 +1,86 @@
+<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="navbar-header">
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <a class="navbar-brand" href="home">SEP</a>
+        <% if current_user %>
+        <% if current_user.role == "admin" %>
+          <li class="active"><%= link_to('Admin', pages_admin_path) %></li>
+          <% end %>
+          
+         <% if current_user.role == "aprendiz" %>
+          <li><%= link_to "Nueva Bitacora",  new_bitacora_path %></li>
+          <li><%= link_to('Estudiantes', estudiantes_path ) %></li>
+          <% end %>
+
+           <% if current_user.role == "jefe" %>
+           <li ><%= link_to('Empresas', empresas_path ) %></li>
+           <li><%= link_to('Jefes', jefes_path ) %></li>
+          <li><%= link_to 'RealizarEvaluaciones', new_evaluacion_path  %></li>
+           <% end %>
+
+           <% if current_user.role == "monitor" %> 
+             <li>
+               <%= link_to('Jefes', jefes_path ) %>
+             </li>
+             <li>
+               <%= link_to('Empresas', empresas_path ) %>
+             </li>
+             <li>
+               <%= link_to('Estudiantes', estudiantes_path ) %>
+             </li>
+              <li>
+               <%= link_to('Evaluaciones', evaluaciones_path ) %>
+             </li>
+           <% end %> 
+
+          <% if current_user.role == "directivo" %> 
+             <li>
+               <%= link_to('Jefes', jefes_path ) %>
+             </li>
+             <li>
+               <%= link_to('Empresas', empresas_path ) %>
+             </li>
+             <li>
+               <%= link_to('Estudiantes', estudiantes_path ) %>
+             </li>
+              <li>
+               <%= link_to('Evaluaciones', evaluaciones_path ) %>
+             </li>
+           <% end %>
+
+
+          <li><%= link_to "Editar Usuario", edit_user_path(current_user.id), :remote => true %></li> 
+      <% end %> 
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+           
+              Ingresar
+            <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <% if !current_user %>
+            <li>
+              <%= link_to image_tag('Admin/ingresar.png'), :login, :remote => true, :label => "Salir" %><b class="pull-right" >Ingresar</b>
+            </li>
+            <li>
+              <%= link_to image_tag('Admin/registrarse.png'),  new_user_path,  :remote => true %><b class="pull-right" >Registrase</b>
+            </li>
+          <% else %>
+              <li>
+                <%= link_to image_tag('Admin/salir.png'), :logout %><b class="pull-right" >Salir</b>
+              </li>
+          <% end %>
+          <li class="divider"></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+

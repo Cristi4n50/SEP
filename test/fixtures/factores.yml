@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  area_id: 
+  tipofactor_id: 
+  descripcion: MyString
+
+two:
+  area_id: 
+  tipofactor_id: 
+  descripcion: MyString

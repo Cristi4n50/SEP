@@ -1,0 +1,11 @@
+<tr id=<%= "tipopractica_#{tipopractica.id}" %>>
+	<td><%= tipopractica.id %></td>
+	<td><%= tipopractica.nombre %></td>
+	<td> 
+		<%= link_to  image_tag('Crud/mostrar.png'), tipopractica, :remote => true, :class => 'btn btn-mini' %>
+        <%= link_to image_tag('Crud/editar1.png', :title => "Editar Equipos"), edit_tipopractica_path(tipopractica), :remote => true,
+          :class => 'btn btn-mini'%>
+	</td>
+</tr>
+
+

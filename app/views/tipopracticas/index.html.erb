@@ -1,0 +1,41 @@
+<div id="example" class="page-header">
+    <h3>Tipos Practicas</h3>
+    <div class="navbar">
+    <div class="navbar-inner">
+    <li id='buscar' class="brand" href="#">Buscar</li>
+      <div class="row">
+        <div class="span6">
+          <form method="GET" class="form-inline" >
+            <input id='buscar' name="buscar" class="search-query" type="text" placeholder="Buscar" >
+            <button id='buscar' type="submit" class="btn btn-primary"><i class="icon-search icon-white"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <table class="table table-hover"  >
+    <thead>
+      <tr>
+        <th >id</th>
+        <th >Nombres</th>
+        <th >Acciones</th>      
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @tipopracticas %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>
+          <%= link_to image_tag('Crud/save.png'),  new_tipopractica_path,  :remote => true %>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+<div id="pagination">
+  <ul class="pagination">
+    <%= will_paginate @tipopracticas, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente&raquo;' %>
+  </ul>
+</div>

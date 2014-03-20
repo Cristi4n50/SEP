@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nombre1: MyString
+  nombre2: MyString
+  apellido1: MyString
+  apellido2: MyString
+  genero: false
+  documento: MyString
+  ficha_id: 
+  jefe_id: 
+  tipodoc_id: 
+
+two:
+  nombre1: MyString
+  nombre2: MyString
+  apellido1: MyString
+  apellido2: MyString
+  genero: false
+  documento: MyString
+  ficha_id: 
+  jefe_id: 
+  tipodoc_id: 

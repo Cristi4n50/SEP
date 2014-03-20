@@ -1,0 +1,12 @@
+<tr id=<%= "actestado_#{actestado.id}" %>>
+    <td><%= actestado.id %></td>
+	<td><%= actestado.nombre %></td>
+	<td><%= actestado.descripcion %></td>
+	<td> 
+	    <%= link_to  image_tag('Crud/mostrar.png'), actestado,     :remote => true, :class => 'btn btn-mini' %>
+        <%= link_to image_tag('Crud/editar1.png', :title => "Editar Equipos"), edit_actestado_path(actestado),  :remote => true,
+          :class => 'btn btn-mini'%>
+	</td>
+</tr>
+
+

@@ -1,0 +1,32 @@
+<%= simple_form_for(@detalle_evaluacion, :html => { :multipart => true, :remote => true }) do |f| %>
+ <div class="user">
+    <div class="modal-header">
+      <a href="#" class="close"   onclick="$.lazybox.close()">&times;</a>
+      <h4 class="modal-title"><h3>Detalle Evaluaciones</h3></h4>
+    </div><br>
+    <div class="row">
+      <div class="col-md-4">
+        Evaluaciones:
+      </div>
+      <div class="col-md-6">
+        <%= f.collection_select :evaluacion_id, Evaluacion.all, :id, :fecha_evaluacion, :prompt => "Selecione Fecha_Evaluacion", :label => false,  :required => true  %></br></br>
+      </div>
+      <div class="col-md-4">
+        Factores:
+      </div>
+      <div class="col-md-6">
+        <%= f.collection_select :factor_id, Factor.all, :id, :descripcion, :prompt => "Selecione Factor", :label => false,  :required => true  %> </br></br>
+      </div>
+      <div class="col-md-4">
+        Descripción:
+      </div>
+      <div class="col-md-6">
+        <%= f.input :observaciones, :label => false,  :required => true %>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <%= f.submit "guardar", :class => 'btn btn-primary' %>
+      <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>
+    </div>
+  </div>
+<% end %>

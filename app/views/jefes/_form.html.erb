@@ -1,0 +1,62 @@
+<%= simple_form_for(@jefe, :html => { :multipart => true, :remote => true }) do |f| %>
+ <div class="user">
+    <div class="modal-header">
+       <a href="#" class="close"   onclick="$.lazybox.close()">&times;</a>
+      <h4 class="modal-title"><h3>Datos Jefes</h3></h4>
+    </div><br>
+      <div class="row">
+        <div class="col-md-4">
+          Nombres:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :nombres, :label => false,  :required => true   %>
+        </div>
+        <div class="col-md-4">
+          Apellido:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :apellidos, :label => false,  :required => true %>
+        </div>
+        <div class="col-md-4">
+          TipoDocumentos:
+        </div>
+        <div class="col-md-6">
+          <%= f.collection_select :tipodoc_id, Tipodoc.all, :id, :sigla, :prompt => "TipoDocumentos", :label => false,  :required => true %></br></br>
+        </div>
+        <div class="col-md-4">
+          Cedula:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :cedula, :label => false,  :required => true   %>
+        </div>
+        <div class="col-md-4">
+          Cargo:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :cargo, :label => false,  :required => true %>
+        </div>
+        <div class="col-md-4">
+          Telefono:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :telefono, :label => false,  :required => true %>
+        </div>
+        <div class="col-md-4">
+          Email:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :email, :label => false,  :required => true %>
+        </div>
+        <div class="col-md-4">
+          Empresas:
+        </div>
+        <div class="col-md-6">
+          <%= f.collection_select :empresa_id, Empresa.all, :id, :nombre, :prompt => "Selecione Empresa", :label => false,  :required => true %>
+        </div>
+      </div>
+  </div>
+  <div class="modal-footer">
+    <%= f.submit "guardar", :class => 'btn btn-primary' %>
+    <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>
+  </div>
+<% end %>

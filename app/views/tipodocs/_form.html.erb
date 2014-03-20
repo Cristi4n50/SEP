@@ -1,0 +1,26 @@
+<%= simple_form_for(@tipodoc, :html => { :multipart => true, :remote => true }) do |f| %>
+   <div class="user">
+      <div class="modal-header">
+         <a href="#" class="close"   onclick="$.lazybox.close()">&times;</a>
+        <h4 class="modal-title"><h3>Datos TipoDocumentos</h3></h4>
+      </div><br>
+        <div class="row">
+          <div class="col-md-4">
+            Siglas:
+          </div>
+        <div class="col-md-6">
+          <%= f.input :sigla, :label => false,  :required => true %>
+        </div>
+        <div class="col-md-4">
+          Descripciónes:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :descripcion, :label => false,  :required => true  %>
+        </div>
+      </div>
+  </div>
+  <div class="modal-footer">
+    <%= f.submit "guardar", :class => 'btn btn-primary' %>
+    <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>
+  </div>
+<% end %>

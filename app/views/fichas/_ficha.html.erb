@@ -1,0 +1,14 @@
+<tr id=<%= "ficha_#{ficha.id}" %>>
+	<td><%= ficha.id %></td>
+	<td><%= ficha.numero %></td>
+	<td><%= ficha.fecha_inicio_practicas %></td>
+	<td><%= ficha.programa.nombre %></td>
+	<td><%= ficha.fecha_fin_practicas %></td>
+	<td> 
+		<%= link_to  image_tag('Crud/mostrar.png'), ficha, :remote => true, :class => 'btn btn-mini' %>
+        <%= link_to image_tag('Crud/editar1.png', :title => "Editar Equipos"), edit_ficha_path(ficha), :remote => true,
+          :class => 'btn btn-mini'%>
+	</td>
+</tr>
+
+

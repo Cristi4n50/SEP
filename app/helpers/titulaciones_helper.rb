@@ -1,0 +1,2 @@
+module TitulacionesHelper
+end

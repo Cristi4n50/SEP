@@ -1,0 +1,39 @@
+<%= javascript_include_tag "fecha" %>
+<%= simple_form_for(@ficha, :html => { :multipart => true, :remote => true }) do |f| %>
+ <div class="user">
+    <div class="modal-header">
+       <a href="#" class="close"   onclick="$.lazybox.close()">&times;</a>
+      <h4 class="modal-title"><h3>Datos Fichas</h3></h4>
+    </div><br>
+      <div class="row">
+        <div class="col-md-4">
+          #Fichas:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :numero, :label => false,  :required => true   %>
+        </div>
+        <div class="col-md-4">
+          FechaInicioPracticas:
+        </div>
+        <div class="col-md-6">
+       <%= f.input :fecha_inicio_practicas, :as => :string, :required => true,  :input_html => {  :class => "datepicker" }, :label => false %>
+        </div>
+        <div class="col-md-4">
+          Programas:
+        </div>
+        <div class="col-md-6">
+          <%= f.collection_select :programa_id, Programa.all, :id, :nombre, :prompt => "Selecione Programa", :label => false,  :required => true %></br></br>
+        </div>
+        <div class="col-md-4">
+          FechaFinPracticas:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :fecha_fin_practicas, :as => :string, :required => true,  :input_html => {  :class => "datepicker" }, :label => false %>
+        </div>
+      </div>
+  </div>
+  <div class="modal-footer">
+    <%= f.submit "guardar", :class => 'btn btn-primary' %>
+    <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>
+  </div>
+<% end %>

@@ -1,0 +1,8 @@
+<tr id=<%= "asignar_proy_#{asignar_proy.id}" %>>
+	<td><%= asignar_proy.nombreproyecto %></td>
+	<td> 
+     <%= link_to  image_tag('Crud/mostrar.png'), estudiante_asignar_proy_path(@estudiante, asignar_proy), :remote => true, :class => 'btn btn-mini' %>
+     <%= link_to image_tag('Crud/editar1.png', :title => "Editar Equipos"), edit_estudiante_asignar_proy_path(@estudiante, asignar_proy), :remote => true, :class => 'btn btn-mini'%>
+     <%= link_to image_tag('Crud/actividades.png'), asignar_proy_actividades_path(asignar_proy), :class => 'btn btn-mini', :rel => "tooltip", :title => "Actividades" %>
+	</td>
+</tr>

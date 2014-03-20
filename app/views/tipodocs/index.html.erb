@@ -1,0 +1,22 @@
+<h3>Datos TipoDocumentos</h3>
+  <table class="table table-hover"  >
+    <thead>
+      <tr>
+        <th >id</th>
+        <th >Siglas</th>
+        <th >Descripciones</th> 
+        <th >Acciones</th>      
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @tipodocs %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>
+          <%= link_to image_tag('Crud/save.png'),  new_tipodoc_path,  :remote => true %>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+      

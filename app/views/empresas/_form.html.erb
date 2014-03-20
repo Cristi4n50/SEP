@@ -1,0 +1,62 @@
+<%= simple_form_for(@empresa, :html => { :multipart => true, :remote => true }) do |f| %>
+ <div class="user">
+    <div class="modal-header">
+      <a href="#" class="close"   onclick="$.lazybox.close()">&times;</a>
+      <h4 class="modal-title"><h3>Datos Empresas</h3></h4>
+    </div><br>
+      <div class="row">
+        <div class="col-md-4">
+          Nombre:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :nombre, :label => false,  :required => true  %>
+        </div>
+        <div class="col-md-4">
+          Nit:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :nit, :label => false,  :required => true   %>
+        </div>
+        <div class="col-md-4">
+          Dv:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :dv, :label => false,  :required => true   %>
+        </div>
+        <div class="col-md-4">
+          Dirección:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :direccion, :label => false,  :required => true  %>
+        </div>
+        <div class="col-md-4">
+          Telefono:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :telefono, :label => false,  :required => true   %>
+        </div>
+        <div class="col-md-4">
+          Fax:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :fax, :label => false,  :required => true   %>
+        </div>
+        <div class="col-md-4">
+          Email:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :email, :label => false,  :required => true   %>
+        </div>
+        <div class="col-md-4">
+          Pagina Web:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :paginaweb, :label => false,  :required => true   %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <%= f.submit "guardar", :class => 'btn btn-primary' %>
+        <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>
+      </div>
+    </div>
+<% end %>

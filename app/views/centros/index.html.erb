@@ -1,0 +1,21 @@
+<h3>Datos Centros</h3>
+  <table class="table table-hover"  >
+    <thead>
+      <tr>
+        <th >id</th>
+        <th >Nombres</th>
+        <th >Dirección</th>
+        <th >Codigos</th>  
+        <th >Acciones</th>      
+      </tr>
+    </thead>
+    <tbody><%= render @centros %></tbody>
+    <tfoot>
+      <tr>
+        <td>
+          <%= link_to image_tag('Crud/save.png'),  new_centro_path,  :remote => true %>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+      

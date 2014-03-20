@@ -1,0 +1,18 @@
+  <h3>Asignaciones</h3>
+  <table class="table table-hover"  >
+    <thead>
+      <tr>
+        <th >Usuarios</th>
+        <th >Roles</th>
+        <th >Acciones</th>      
+      </tr>
+    </thead>
+    <tbody><%= render @assignments %></tbody>
+    <tfoot>
+      <tr>
+        <td>
+          <%= link_to image_tag('Crud/save.png'),  new_assignment_path, :remote => true %>
+        </td>
+      </tr>
+    </tfoot>
+  </table>

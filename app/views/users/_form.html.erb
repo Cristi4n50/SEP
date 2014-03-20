@@ -1,0 +1,112 @@
+<%= simple_form_for(@user, :html => { :multipart => true, :remote => true }) do |f| %>
+  <div class="user">
+  <div class="modal-body">
+    <div class="modal-header">
+       <a href="#" class="close"   onclick="$.lazybox.close()">&times;</a>
+      <h4 class="modal-title"><h3>Datos Usuarios</h3></h4>
+    </div><br>
+    <div class="row">
+      <div class="col-md-4">
+        Nombre:
+      </div>
+      <div class="col-md-6">
+        <%= f.input :name, :label => false,  :required => true %>
+      </div>
+    </div>
+      <div class="row">
+      <div class="col-md-4">
+        Apellido:
+      </div>
+      <div class="col-md-6">
+        <%= f.input :lastname, :label => false,  :required => true %>
+      </div>
+    </div>
+       <div class="row">
+      <div class="col-md-4">
+        TipoDocumento:
+      </div>
+      <div class="col-md-6">
+        <%= f.collection_select :tipodoc_id, Tipodoc.all, :id, :sigla, :prompt => "Selecione Tipo Documento", :label => "TipoDocumentos",  :required => true %>
+      </div>
+    </div></br>
+       <div class="row">
+      <div class="col-md-4">
+        #Documento:
+      </div>
+      <div class="col-md-6">
+        <%= f.input :numberidentification, :label => false,  :required => true %>
+      </div>
+    </div>
+     <div class="row">
+      <div class="col-md-4">
+        Cargo:
+      </div>
+      <div class="col-md-6">
+        <%= f.input :charge, :label => false,  :required => true %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        Telefono:
+      </div>
+      <div class="col-md-6">
+        <%= f.input :phone, :label => false,  :required => true %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        Ip:
+      </div>
+      <div class="col-md-6">
+        <%= f.input :ip, :label => false,  :required => true %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        Email:
+      </div>
+      <div class="col-md-6">
+        <%= f.input :email, :label => false,  :required => true %>
+      </div>
+      <div class="col-md-4">
+        Mi Usuario:
+      </div>
+      <div class="col-md-6">
+        <%=  f.input :username, :label => false,  :required => true, :placeholder=>"Numero Identificación" %>
+      </div>
+      <div class="col-md-4">
+        Contraseña:
+      </div>
+      <div class="col-md-6">
+        <%= f.input :password, :label => false,  :required => true %>
+      </div>
+      <div class="col-md-4">
+        Confirmar Contraseña:
+      </div>
+      <div class="col-md-6">
+        <%= f.input :password_confirmation, :label => false,  :required => true %>
+      </div>
+    </div>
+  </div>
+   <p>  
+    <% if can? :manage, User %>
+                <div class="well well-small">
+                      <% for role in Role.all %>
+                        <%= check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role) %>
+                        <%= role.name %>
+                    <% if role.id % 4 == 0 %> 
+                                <br>
+                    <% end %>
+                  <% end %>
+                  <%= hidden_field_tag "user[role_ids][]", "" %>
+                </div>
+          </p>
+              <% end %>
+  </div>
+  <div class="modal-footer">
+    <%= f.submit "guardar", :class => 'btn btn-primary' %>
+    <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>
+  </div>
+<% end %>
+
+

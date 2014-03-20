@@ -1,0 +1,21 @@
+<h3>Datos Detalles Evaluaciones</h3>
+  <table class="table table-hover"  >
+    <thead>
+      <tr>
+        <th >id</th>
+        <th >Evaluaciones</th>
+        <th >Factores</th>
+        <th >Observaciones</th>  
+        <th >Acciones</th>      
+      </tr>
+    </thead>
+    <tbody><%= render @detalle_evaluaciones %></tbody>
+    <tfoot>
+      <tr>
+        <td>
+          <%= link_to image_tag('Crud/save.png'),  new_detalle_evaluacion_path,  :remote => true %>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+      

@@ -1,0 +1,283 @@
+<div id="evaluacion" class="well">
+<%= javascript_include_tag "fecha" %>
+
+<%= simple_form_for @evaluacion, :html => { :multipart => true } do |f| %> 
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <a href="#"><strong>Seguimiento y Evaluación de la Etapa Productiva</strong></a>
+        </li>
+        <li class="active">
+          <a href="#"><strong>Jefe:</strong> <%= @jefe.nombres %> <%= @jefe.apellidos %></a>
+        </li>
+      </ul>
+      <br>
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <div class="col-md-12">
+               <%= f.collection_select :estudiante_id, Estudiante.where(:jefe_id => @jefe.id), :id, :nombre1, :prompt => "Selecione Estudiante" %>
+            </div>
+          </li>
+          <li class="active">
+            <div class="col-md-8">
+              <%= f.input :fecha_inicio, :as => :string, :label => false, :required => true, :placeholder => "FechaInicio", :input_html => {  :class => "datepicker " } %> 
+            </div>
+          </li><li class="active">
+            <div class="col-md-8"> 
+               <%= f.input :fecha_fin, :as => :string, :label => false,  :required => true, :placeholder => "FechaFinal",  :input_html => {  :class => "datepicker" } %>
+            </div>
+          </li>
+          <li class="active">
+            <div class="col-md-8">
+               <%= f.input :fecha_evaluacion, :as => :string, :label => false,  :required => true, :placeholder => "FechaEvaluación",  :input_html => {  :class => "datepicker" } %>
+            </div>
+          </li>
+        </ul>
+        <br>
+        <hr>
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#"><strong><em>Factores Actitudinales y Comportamentales</em></strong></strong></a></li>
+          </ul>
+          <table id='tab1' class="table table-hover table-bordered">
+            <thead>
+              <tr>
+                <th>Factores</th>
+                <th><center>Descripciones</center></th>
+                <th>&nbsp;Evaluación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Relaciones Interpersonales</td>
+                <td> <p class="span8">                 
+                    Desarrolla relaciones interpersonales con  las personas de los diferentes niveles del ente Coformador en forma armoniosa, respetuosa  y enmarcada dentro de los principios de convivencia social.
+                  </p>
+                </td>
+                <td>
+                  <p class="span1">
+                    <%= f.input :relacionesinterpersona, as: :radio_buttons,  :label => false, :collection => [["Si", true], ["No", false]], :input_html => {:class => 'span1'}  %>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Trabajo en Equipo.
+                </td>
+                <td>
+                  Participa en forma activa y propositiva  en equipos de trabajo asumiendo los roles, de acuerdo con sus fortalezas.
+                </td>
+                <td>
+                  <%= f.input :trabajoequipo, as: :radio_buttons,  :label => false, :collection => [["Si", true], ["No", false]], :input_html => {:class => 'span1'}  %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Solución De Problemas
+                </td>
+                <td>
+                  Propone alternativas de solución a situaciones problémicas, en el contexto del desarrollo de su etapa productiva. 
+                </td>
+                <td>
+                  <%= f.input :solucionproblema, as: :radio_buttons,  :label => false, :collection => [["Si", true], ["No", false]], :input_html => {:class => 'span1'}  %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Cumplimiento
+                </td>
+                <td>
+                  Asume compromiso de las funciones y responsabilidades asignadas en el desarrollo de su trabajo.
+                </td>
+                <td>
+                  <%= f.input :cumplimiento, as: :radio_buttons,  :label => false, :collection => [["Si", true], ["No", false]], :input_html => {:class => 'span1'}  %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Organización
+                </td>
+                <td>
+                  Demuestra capacidad para ordenar y disponer los elementos necesarios e información para facilitar la ejecución de un trabajo y el logro de los objetivos.
+                </td>
+                <td>
+                  <%= f.input :organizacion, as: :radio_buttons,  :label => false, :collection => [["Si", true], ["No", false]], :input_html => {:class => 'span1'}  %>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                <%= select_tag(:aspectos_positivos, options_for_select([["Selecione Puntaje"],['1','1'], ['2','2'], ['3','3'], ['4','4'], ['5','5']]))  %>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <br>
+          <hr>
+          <hr>
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#">Factores Técnicos</a></li>
+          </ul>
+          <table id='tab' class="table table-hover table-bordered">
+            <thead>
+              <tr>
+                <th>Factores</th>
+                <th><center>Descripciones</center></th>
+                <th>Evaluación</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>
+                Transferencia De Conocimiento
+              </td>
+              <td>
+                Demuestra las competencias específicas del programa de<br> formación en situaciones reales de trabajo.
+              </td>
+              <td>
+                <p class="span1">
+                <%= f.input :transferenciaconocimiento, as: :radio_buttons,  :label => false, :collection => [["Si", true], ["No", false]], :input_html => {:class => 'span1'}  %>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Mejora Continua.
+              </td>
+              <td>
+                Aporta al mejoramiento de los procesos propios de su desempeño.
+              </td>
+              <td>
+                <%= f.input :mejoracontinua, as: :radio_buttons,  :label => false, :collection => [["Si", true], ["No", false]], :input_html => {:class => 'span1'}  %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Fortalecimiento Ocupacional 
+              </td>
+              <td>
+                Autogestiona acciones que fortalezca su perfil ocupacional
+                en el marco<br> de su proyecto de vida. 
+              </td>
+              <td>
+                <%= f.input :fortalecimientoocupacional, as: :radio_buttons,  :label => false, :collection => [["Si", true], ["No", false]], :input_html => {:class => 'span1'}  %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Oportunidad y Calidad
+              </td>
+              <td>
+                Presenta con oportunidad y calidad  los productos
+                generados en el  desarrollo de sus funciones y actividades.
+              </td>
+              <td>
+                <%= f.input :oportunidadcalidad, as: :radio_buttons,  :label => false, :collection => [["Si", true], ["No", false]], :input_html => {:class => 'span1'}  %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Responsabilidad Ambiental
+              </td>
+              <td>
+                  Administra los recursos para el desarrollo de sus actividades con criterios de responsabilidad ambiental.
+              </td>
+              <td>
+                <%= f.input :responsabilidadambiental, as: :radio_buttons,  :label => false, :collection => [["Si", true], ["No", false]], :input_html => {:class => 'span1'}  %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Administración De Recursos
+              </td>
+              <td>
+                Utiliza de manera racional los materiales, 
+                equipos y herramientas suministrados para el 
+                desempeño de sus actividades o funciones.
+              </td>
+              <td>
+                <%= f.input :administracionrecurso, as: :radio_buttons,  :label => false, :collection => [["Si", true], ["No", false]], :input_html => {:class => 'span1'}  %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Seguridad Ocupacional e Industrial
+              </td>
+              <td>
+                Utiliza   los elementos de seguridad  y salud ocupacional 
+                de acuerdo con la normatividad vigente establecida para sus
+                actividades o funciones.
+              </td>
+              <td>
+                <%= f.input :seguridadocupacionalindustrial, as: :radio_buttons,  :label => false, :collection => [["Si", true], ["No", false]], :input_html => {:class => 'span1'}  %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Documentación Etapa Productiva
+              </td>
+              <td>
+                Actualiza permanentemente el portafolio 
+                de evidencias.
+              </td>
+              <td>
+                <%= f.input :documentacionetapaproductiva, as: :radio_buttons,  :label => false, :collection => [["Si", true], ["No", false]], :input_html => {:class => 'span1'}  %>
+              </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                <%= select_tag(:aspectos_positivos_ft, options_for_select([["Selecione Puntaje"],['1','1'], ['2','2'], ['3','3'], ['4','4'], ['5','5']]))  %>
+                </td>
+              </tr>
+            </table>
+            <br>
+            <hr>
+            <br>
+            <table class="table table-hover table-bordered">
+            <tbody>
+            <tr>
+              <div class="span4">
+                <%= f.input :observacion_jefe, :label => "Observaciones del Jefe" %>
+              </div>
+            </tr>
+            <tr>
+              <div class="span4">
+                <%= f.input :observacion_aprendiz, :label => "Observaciones del Aprendiz"  %>
+              </div>
+            </tr>
+            <tr>
+              <td>
+                Juicio de Evaluación
+              </td>
+              <td>
+                <%= f.input :juicio_evaluacion, as: :radio_buttons,  :label => false, :collection => [["Aprobado", true], ["No Aprobado", false]], :input_html => {:class => 'span1'}  %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Requiere Plan de Mejoramiento
+              </td>
+              <td>
+                <%= f.input :plan_mejoramiento, as: :radio_buttons,  :label => false, :collection => [["Si", true], ["No", false]], :input_html => {:class => 'span1'}  %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Reconocimientos Especiales sobre el desempeño
+              </td>
+              <td>
+                <%= f.input :reconocimientos_especiales, as: :radio_buttons,  :label => false, :collection => [["Si", true], ["No", false]], :input_html => {:class => 'span1 hh'}  %>
+              </td>
+            </tr>
+            </tbody>
+            </table>
+            <div id="hidden_field">
+                Especificar Cuales:
+              
+                <%= f.input :rec_especial, :label => false %>
+            </div>
+          
+      <%= f.submit "Guardar", :class => "btn btn-info"%>
+  </div>
+      
+<% end %>

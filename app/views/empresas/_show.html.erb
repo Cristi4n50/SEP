@@ -1,0 +1,49 @@
+<div class="modal-header">
+  <button  class="close" onclick="$.lazybox.close()">&times;</button>
+  <h3>Imformación Empresas</h3>
+</div>
+  <div class="modal-body">
+    <table class="table table-striped table-condensed">
+      <tr>
+        <td><b class="pull-right">ID: </b></td>
+        <td><%= @empresa.id %></td>
+      </tr>
+      <tr>
+        <td><b class="pull-right">Nombre: </b></td>
+        <td><%= @empresa.nombre %></td>
+      </tr>
+      <tr>
+        <td><b class="pull-right">Nit: </b></td>
+        <td><%= @empresa.nit %></td>
+      </tr>
+      <tr>
+        <td><b class="pull-right">Dv: </b></td>
+        <td><%= @empresa.dv %></td>
+      </tr>
+      <tr>
+        <td><b class="pull-right">Dirección: </b></td>
+        <td><%= @empresa.direccion %></td>
+      </tr>
+      <tr>
+        <td><b class="pull-right">Telefono: </b></td>
+        <td><%= @empresa.telefono %></td>
+      </tr>
+      <tr>
+        <td><b class="pull-right">Fax: </b></td>
+        <td><%= @empresa.fax  %></td>
+      </tr>
+      <tr>
+        <td><b class="pull-right">Email: </b></td>
+        <td><%= @empresa.email %></td>
+      </tr>
+      <tr>
+        <td><b class="pull-right">PaginaWeb: </b></td>
+        <td><%= @empresa.paginaweb %></td>
+      </tr>
+    </table>
+    <div class="modal-footer">
+      <a onclick="$.lazybox.close()">&times;</a>
+    </div>           
+</div>
+
+

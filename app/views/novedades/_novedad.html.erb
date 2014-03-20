@@ -1,0 +1,15 @@
+<tr id=<%= "novedad_#{novedad.id}" %>>
+	<td><%= novedad.id %></td>
+	<td><%= novedad.fecha_ocurrencia %></td>
+	<td><%= novedad.user.username %></td>
+	<td><%= novedad.implicados %></td>
+	<td><%= novedad.actestado.nombre %></td>
+	<td><%= novedad.descripcion %></td>
+	<td> 
+		<%= link_to  image_tag('Crud/mostrar.png'), novedad, :remote => true, :class => 'btn btn-mini' %>
+        <%= link_to image_tag('Crud/editar1.png', :title => "Editar Equipos"), edit_novedad_path(novedad), :remote => true,
+          :class => 'btn btn-mini'%>
+	</td>
+</tr>
+
+

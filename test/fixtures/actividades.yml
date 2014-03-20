@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  fecha_inicio: 2013-11-20
+  fecha_fin: 2013-11-20
+  descripcion: MyString
+  categoria_id: 
+  objsyproy_id: 
+  estudiante_id: 
+  actEstado_id: 
+
+two:
+  fecha_inicio: 2013-11-20
+  fecha_fin: 2013-11-20
+  descripcion: MyString
+  categoria_id: 
+  objsyproy_id: 
+  estudiante_id: 
+  actEstado_id: 

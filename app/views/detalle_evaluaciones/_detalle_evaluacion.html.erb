@@ -1,0 +1,13 @@
+<tr id=<%= "detalle_evaluacion_#{detalle_evaluacion.id}" %>>
+	<td><%= detalle_evaluacion.id %></td>
+	<td><%= detalle_evaluacion.evaluacion.fecha_evaluacion %></td>
+	<td><%= detalle_evaluacion.factor.descripcion %></td>
+	<td><%= detalle_evaluacion.observaciones %></td>
+	<td> 
+	   <%= link_to  image_tag('Crud/mostrar.png'), detalle_evaluacion, :remote => true, :class => 'btn btn-mini' %>
+       <%= link_to image_tag('Crud/editar1.png', :title => "Editar Equipos"), edit_detalle_evaluacion_path(detalle_evaluacion), :remote => true,
+          :class => 'btn btn-mini'%>
+	</td>
+</tr>
+
+

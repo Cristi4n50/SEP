@@ -1,0 +1,12 @@
+<tr id=<%= "assignment_#{assignment.id}" %>>
+    <td><%= assignment.id %></td>
+	<td><%= assignment.user_id %></td>
+	<td><%= assignment.role_id %></td>
+	<td> 
+	  <%= link_to  image_tag('Crud/mostrar.png'), assignment, :remote => true, :class => 'btn btn-mini' %>
+      <%= link_to image_tag('Crud/editar1.png', :title => "Editar Equipos"), edit_assignment_path(assignment), :remote => true,
+          :class => 'btn btn-mini'%>
+	</td>
+</tr>
+
+

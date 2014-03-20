@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  estudiante_id: 
+  jefe_id: 
+  fecha_inicio: 2013-11-20
+  fecha_fin: 2013-11-20
+  fecha_evaluacion: 2013-11-20
+  aspectos_positivos: MyString
+  aspectos_negativos: MyString
+
+two:
+  estudiante_id: 
+  jefe_id: 
+  fecha_inicio: 2013-11-20
+  fecha_fin: 2013-11-20
+  fecha_evaluacion: 2013-11-20
+  aspectos_positivos: MyString
+  aspectos_negativos: MyString

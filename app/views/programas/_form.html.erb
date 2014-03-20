@@ -1,0 +1,44 @@
+<%= simple_form_for(@programa, :html => { :multipart => true, :remote => true }) do |f| %>
+ <div class="user">
+    <div class="modal-header">
+       <a href="#" class="close"   onclick="$.lazybox.close()">&times;</a>
+      <h4 class="modal-title"><h3>Datos Programas</h3></h4>
+    </div><br>
+      <div class="row">
+        <div class="col-md-4">
+          Nombre:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :nombre, :label => false,  :required => true %>
+        </div>
+        <div class="col-md-4">
+          Versiones:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :version, :label => false,  :required => true  %>
+        </div>
+        <div class="col-md-4">
+          Codigo:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :codigo, :label => false,  :required => true  %>
+        </div>
+        <div class="col-md-4">
+          Centro:
+        </div>
+        <div class="col-md-6">
+          <%= f.collection_select :centro_id, Centro.all, :id, :nombre, :prompt => "Selecione Centro", :label => false,  :required => true %></br></br>
+        </div>
+        <div class="col-md-4">
+          Titulaciones:
+        </div>
+        <div class="col-md-6">
+          <%= f.collection_select :titulacion_id, Titulacion.all, :id, :sigla, :prompt => "Selecione Titulacion", :label => false,  :required => true %>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <%= f.submit "guardar", :class => 'btn btn-primary' %>
+      <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>
+    </div>
+<% end %>

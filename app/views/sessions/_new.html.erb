@@ -1,0 +1,29 @@
+<%= form_tag sessions_path do %>
+<div class="user">
+  <div class="modal-header">
+    <a href="#" class="close"   onclick="$.lazybox.close()">&times;</a>
+    <h4 class="modal-title"><h3>Ingreso al Sistema</h3></h4>
+  </div><br>
+    <div class="row">
+      <div class="col-md-4">
+        Mi usuario:
+      </div>
+      <div class="col-md-6">
+        <%= text_field_tag :username %>
+      </div>
+      <div class="col-md-4">
+        Contraseña:
+      </div>
+      <div class="col-md-6">
+        <%= password_field_tag :password  %>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <%= submit_tag "Ingresar", :class => 'btn btn-success' %>
+    <%= link_to 'Inicio', root_path, :class => 'btn btn-primary' %>
+  </div>
+   <% end %>
+
+
+   

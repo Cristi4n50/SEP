@@ -1,0 +1,68 @@
+<%= simple_form_for(@estudiante, :html => { :multipart => true, :remote => true }) do |f| %>
+<div class="user">
+    <div class="modal-header">
+      <a href="#" class="close"   onclick="$.lazybox.close()">&times;</a>
+      <h4 class="modal-title"><h3>Datos Empresas</h3></h4>
+    </div><br>
+      <div class="row"> 
+       <div class="col-md-6">
+          <%= f.input :nombre1, :class => "col-xs-12", :label => "PrimerNombre:",  :required => true %>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <%= f.input :nombre2, :class => "col-xs-12", :label => "SNombre",  :required => true %>
+        </div>
+
+        <div class="col-md-6">
+          <%= f.input :apellido1, :class => "col-xs-12", :label => "PrimerApellido:",  :required => true %>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <%= f.input :apellido2, :class => "col-xs-12", :label => "SegundoApellido",  :required => true %>
+        </div>
+
+        <div class="col-md-6">
+          
+          <%= f.collection_select :ficha_id, Ficha.all, :id, :numero, :prompt => "Selecione Fichas", :label => "Fichas",  :required => true %>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          
+
+          <%= f.collection_select :tipopractica_id, Tipopractica.all, :id, :nombre, :prompt => "Selecione Tipo Practicas", :label => "Tipopractica",  :required => true %><br><br>
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+         <%= f.collection_select :jefe_id, Jefe.all, :id, :nombres, :prompt => "Selecione Jefes", :label => "",  :required => true %><br><br>
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+        <%= f.collection_select :tipodoc_id, Tipodoc.all, :id, :sigla, :prompt => "Selecione Tipo Documento", :label => "TipoDocumentos",  :required => true %>
+        <br><br>
+         
+        </div>
+
+        
+         <div class="col-xs-12 col-md-6">
+          <%= f.input :genero, as: :radio_buttons,  :label => "Genero", :collection => [["Femenino", true], ["Masculino", false]], :input_html => {:class => ''} %>
+          
+        </div>
+        <div class="col-xs-12 col-md-6">
+        <%= f.input :documento, :label => "#Documento",  :required => true %>
+        
+        </div>
+
+
+        <div class="col-xs-12 col-md-6">
+        <%= f.input :email, :label => "Email",  :required => true %>
+        
+        </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <%= f.submit "guardar", :class => 'btn btn-primary' %>
+        <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>
+      </div>
+    </div> 
+ 
+</div>
+</div>
+<% end %>

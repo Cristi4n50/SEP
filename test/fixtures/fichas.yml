@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  numero: MyString
+  fecha_inicio_practicas: 2013-11-19
+  fecha_fin_practicas: 2013-11-19
+  programa_id: 
+
+two:
+  numero: MyString
+  fecha_inicio_practicas: 2013-11-19
+  fecha_fin_practicas: 2013-11-19
+  programa_id: 

@@ -1,0 +1,282 @@
+<div id="evaluacion" class="well">
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <a href="#"><strong>Seguimiento y Evaluación de la Etapa Productiva</strong></a>
+        </li>
+        <li class="active">
+          <a href="#"><strong>Jefe:</strong> <%= @evaluacion.jefe.nombres %> <%= @evaluacion.jefe.apellidos %></a>
+        </li>
+      </ul>
+      <br>
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <div class="col-md-12">
+              <label>Aprendíz</label>
+               <input value="<%= @evaluacion.estudiante.nombre1 %> <%= @evaluacion.estudiante.nombre2 %> <%= @evaluacion.estudiante.apellido1 %> <%= @evaluacion.estudiante.apellido2 %>" readonly>
+            </div>
+          </li>
+          <li class="active">
+            <div class="col-md-8">
+              <label>Fecha Inicio</label>
+             
+              <input value="<%= @evaluacion.fecha_inicio %>" readonly> 
+            </div>
+          </li><li class="active">
+            <div class="col-md-8">
+              <label>Fecha Fin</label>
+               <input value="<%= @evaluacion.fecha_fin %>" readonly> 
+
+            </div>
+          </li>
+          <li class="active">
+            <div class="col-md-8">
+              <label>Fecha de Evaluacion</label>
+              <input value="<%= @evaluacion.fecha_evaluacion %>" readonly>
+                
+            </div>
+          </li>
+        </ul>
+        <br>
+        <hr>
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#"><strong><em>Factores Actitudinales y Comportamentales</em></strong></strong></a></li>
+          </ul>
+          <table id='tab1' class="table table-hover table-bordered">
+            <thead>
+              <tr>
+                <th>Factores</th>
+                <th><center>Descripciones</center></th>
+                <th>&nbsp;Evaluación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Relaciones Interpersonales</td>
+                <td>                 
+                    Desarrolla relaciones interpersonales con  las personas de los diferentes niveles del ente Coformador en forma armoniosa, respetuosa  y enmarcada dentro de los principios de convivencia social.
+                </td>
+                <td>
+                    <center><%= unboolean(@evaluacion.relacionesinterpersona) %></center> 
+                  
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Trabajo en Equipo.
+                </td>
+                <td>
+                  Participa en forma activa y propositiva  en equipos de trabajo asumiendo los roles, de acuerdo con sus fortalezas.
+                </td>
+                <td>
+                  <center><%= unboolean(@evaluacion.trabajoequipo) %></center>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Solución De Problemas
+                </td>
+                <td>
+                  Propone alternativas de solución a situaciones problémicas, en el contexto del desarrollo de su etapa productiva. 
+                </td>
+                <td>
+                  <center><%= unboolean(@evaluacion.solucionproblema) %></center>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Cumplimiento
+                </td>
+                <td>
+                  Asume compromiso de las funciones y responsabilidades asignadas en el desarrollo de su trabajo.
+                </td>
+                <td>
+                  <center><%= unboolean(@evaluacion.cumplimiento) %></center>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Organización
+                </td>
+                <td>
+                  Demuestra capacidad para ordenar y disponer los elementos necesarios e información para facilitar la ejecución de un trabajo y el logro de los objetivos.
+                </td>
+                <td>
+                  <center><%= unboolean(@evaluacion.organizacion)%></center>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                Puntaje => <%= @evaluacion.aspectos_positivos %>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <br>
+          <hr>
+          <hr>
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#">Factores Técnicos</a></li>
+          </ul>
+          <table id='tab' class="table table-hover table-bordered">
+            <thead>
+              <tr>
+                <th>Factores</th>
+                <th><center>Descripciones</center></th>
+                <th>Evaluación</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>
+                Transferencia De Conocimiento
+              </td>
+              <td>
+                Demuestra las competencias específicas del programa de<br> formación en situaciones reales de trabajo.
+              </td>
+              <td>
+                <center><%= unboolean(@evaluacion.transferenciaconocimiento) %></center>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Mejora Continua.
+              </td>
+              <td>
+                Aporta al mejoramiento de los procesos propios de su desempeño.
+              </td>
+              <td>
+                <center><%= unboolean(@evaluacion.mejoracontinua) %></center>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Fortalecimiento Ocupacional 
+              </td>
+              <td>
+                Autogestiona acciones que fortalezca su perfil ocupacional
+                en el marco<br> de su proyecto de vida. 
+              </td>
+              <td>
+                <center><%= unboolean(@evaluacion.fortalecimientoocupacional) %></center>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Oportunidad y Calidad
+              </td>
+              <td>
+                Presenta con oportunidad y calidad  los productos
+                generados en el  desarrollo de sus funciones y actividades.
+              </td>
+              <td>
+                <center><%= unboolean(@evaluacion.oportunidadcalidad) %></center>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Responsabilidad Ambiental
+              </td>
+              <td>
+                  Administra los recursos para el desarrollo de sus actividades con criterios de responsabilidad ambiental.
+              </td>
+              <td>
+                <center><%= unboolean(@evaluacion.responsabilidadambiental) %></center>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Administración De Recursos
+              </td>
+              <td>
+                Utiliza de manera racional los materiales, 
+                equipos y herramientas suministrados para el 
+                desempeño de sus actividades o funciones.
+              </td>
+              <td>
+                <center><%= unboolean(@evaluacion.administracionrecurso) %></center>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Seguridad Ocupacional e Industrial
+              </td>
+              <td>
+                Utiliza   los elementos de seguridad  y salud ocupacional 
+                de acuerdo con la normatividad vigente establecida para sus
+                actividades o funciones.
+              </td>
+              <td>
+                <center><%= unboolean(@evaluacion.seguridadocupacionalindustrial) %></center>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Documentación Etapa Productiva
+              </td>
+              <td>
+                Actualiza permanentemente el portafolio 
+                de evidencias.
+              </td>
+              <td>
+                <center><%= unboolean(@evaluacion.documentacionetapaproductiva) %></center>
+              </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                Puntaje => <%= @evaluacion.aspectos_positivos_ft %>
+                </td>
+              </tr>
+            </table>
+            <br>
+            <hr>
+            <br>
+            <table class="table table-hover table-bordered">
+            <tbody>
+            <tr>
+              <div class="span4">
+                <label>Observacion Jefe</label>
+                <textarea readonly><%= @evaluacion.observacion_jefe %></textarea>
+              </div>
+            </tr>
+            <tr>
+              <div class="span4">
+                <label>Observacion Aprendíz</label>
+                <textarea readonly><%= @evaluacion.observacion_aprendiz %></textarea>
+                
+              </div>
+            </tr>
+            <tr>
+              <td>
+                Juicio de Evaluación
+              </td>
+              <td>
+                <%= unboolean(@evaluacion.juicio_evaluacion) %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Requiere Plan de Mejoramiento
+              </td>
+              <td>
+                <%= unboolean(@evaluacion.plan_mejoramiento) %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Reconocimientos Especiales sobre el desempeño
+              </td>
+              <td>
+                <%= unboolean(@evaluacion.reconocimientos_especiales) %>
+              </td>
+            </tr>
+            </tbody>
+            </table>
+            <div id="hidden_field">
+                Especificar Cuales:
+              
+                <%= @evaluacion.rec_especial %>
+            </div>
+  </div>

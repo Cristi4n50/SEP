@@ -1,0 +1,44 @@
+<%= simple_form_for(@novedad, :html => { :multipart => true, :remote => true }) do |f| %>
+ <div class="user">
+    <div class="modal-header">
+       <a href="#" class="close"   onclick="$.lazybox.close()">&times;</a>
+      <h4 class="modal-title"><h3>Datos Novedades</h3></h4>
+    </div><br>
+      <div class="row">
+        <div class="col-md-4">
+          FechaOcurrencia:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :fecha_ocurrencia, :label => false,  :required => true  %>
+        </div>
+        <div class="col-md-4">
+          Usuarios:
+        </div>
+        <div class="col-md-6">
+          <%= f.collection_select :user_id , User.all, :id, :username, :prompt => "Selecione Usuarios", :label => false,  :required => true  %></br></br>
+        </div>
+        <div class="col-md-4">
+          Implicados:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :implicados, :label => false,  :required => true %>
+        </div>
+        <div class="col-md-4">
+          ActEstado:
+        </div>
+        <div class="col-md-6">
+          <%= f.collection_select :actestado_id , Actestado.all, :id, :nombre, :prompt => "Selecione ActEstado", :label => false,  :required => true  %></br></br>
+        </div>
+        <div class="col-md-4">
+          Descripción:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :descripcion, :label => false,  :required => true %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <%= f.submit "guardar", :class => 'btn btn-primary' %>
+        <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>
+      </div>
+  </div>
+ <% end %>

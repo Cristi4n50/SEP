@@ -1,0 +1,24 @@
+<h3>Datos Fichas</h3>
+  <table class="table table-hover"  >
+    <thead>
+      <tr>
+        <th >id</th>
+        <th >#Fichas</th>
+        <th >FechasPracticaInicio</th> 
+        <th >Programas</th>
+        <th >FechasPracticasFin</th>
+        <th >Acciones</th>          
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @fichas %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>
+          <%= link_to image_tag('Crud/save.png'),  new_ficha_path,  :remote => true %>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+      

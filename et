@@ -1,0 +1,44 @@
+commit 8bad6b205ce8e9986de0cbd5766d03c13f3259fc
+Author: gregory1308 <gregory1308@misena.edu.co>
+Date:   Wed Nov 20 11:31:03 2013 -0500
+
+    relationship of the created tables and function of twitter bootstrap 3 in forms
+
+commit 4dbd483f84c972bbda82440c364bd1ecdb880b8d
+Author: gregory1308 <gregory1308@misena.edu.co>
+Date:   Tue Nov 19 14:55:28 2013 -0500
+
+    Tablas maestra empresas categorias departamentos objsyproys jefes programas fichas
+
+commit ec205d5fe804e7c8abf59bec0a6275391ec4e0b9
+Author: Paulo Carmona <pcarmona@misena.edu.co>
+Date:   Thu Oct 31 15:44:39 2013 -0500
+
+    Add actEstados ->Estado de las actividades y mejoramiento diagrama ER
+
+commit 393914168ba079934ff4d589b5bd6e8b5964a970
+Author: Paulo Carmona <pcarmona@misena.edu.co>
+Date:   Wed Oct 30 15:00:54 2013 -0500
+
+    Tablas maestras titulaciones- centros - tipodocs
+
+commit dd32e238b69f554413de6f7d96548322dd28aadf
+Merge: 8aebf7b 118d72d
+Author: Paulo Carmona <pcarmona@misena.edu.co>
+Date:   Wed Oct 30 08:30:14 2013 -0500
+
+    Merge branch 'master' of https://github.com/pollcaz/SEP
+    
+    solucion conflicto con el README
+
+commit 8aebf7b2626a9fe93944911acfb3b16b57b267a4
+Author: Paulo Carmona <pcarmona@misena.edu.co>
+Date:   Tue Oct 29 17:29:26 2013 -0500
+
+    Sep  - Student Enterprise Practices Inici APP
+
+commit 118d72dc09036a1d4c127fb3411bda6b7dbfdc21
+Author: Paulo Carmona <pcarmona@misena.edu.co>
+Date:   Tue Oct 29 17:29:26 2013 -0500
+
+    SEP - Inicio Aplicacion Student Enterprise Practice

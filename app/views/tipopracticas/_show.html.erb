@@ -1,0 +1,23 @@
+<div id="fond"class="modal-header">
+  <button  class="close" onclick="$.lazybox.close()">&times;</button>
+  <h3>Tipos Practicas</h3>
+  <hr>
+  <table class="table table-hover"  >
+    <thead>
+      <tr>
+        <th id="color" >id</th>
+        <th id="color" >Nombres</th>
+        <th id="color" >Descripciones</th>    
+      </tr>
+      </thead>
+      <tfoot>
+      <tr class="warning">
+        <td><%= @tipopractica.id %></td>
+        <td><%= @tipopractica.nombre %></td>
+        <td><%= @tipopractica.descripcion %></td>
+      </tr>      
+      </tfoot>
+  </table>
+</div>
+   
+  

@@ -1,0 +1,18 @@
+<tr id=<%= "evaluacion_#{evaluacion.id}" %>>
+	<td><%= evaluacion.id %></td>
+	<td><%= evaluacion.jefe.nombres %></td>
+	<td><%= evaluacion.fecha_inicio %></td>
+	<td><%= evaluacion.fecha_evaluacion %></td>
+	<td><%= evaluacion.aspectos_positivos %></td>
+	<td><%= evaluacion.aspectos_negativos %></td>
+	<td><%= evaluacion.fecha_fin %></td>
+	<td> 
+	  <%= link_to  image_tag('Crud/mostrar.png'), evaluacion, :class => 'btn btn-mini' %>
+      <%= link_to image_tag('Crud/editar1.png', :title => "Editar Equipos"), edit_evaluacion_path(evaluacion), :remote => true,
+          :class => 'btn btn-mini'%>
+      <%= link_to "V E P", evaluacion_path(evaluacion, :format => 'pdf'),  :target => "_blank"  %>
+
+	</td>
+</tr>
+
+

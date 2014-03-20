@@ -1,0 +1,17 @@
+<tr id=<%= "empresa_#{empresa.id}" %>>
+	<td><%= empresa.id %></td>
+	<td><%= empresa.nombre %></td>
+	<td><%= empresa.nit %></td>
+	<td><%= empresa.dv %></td>
+	<td><%= empresa.direccion %></td>
+	<td><%= empresa.telefono %></td>
+	<td><%= empresa.fax  %></td>
+	<td><%= empresa.email %></td>
+	<td> 
+		<%= link_to  image_tag('Crud/mostrar.png'), empresa, :remote => true, :class => 'btn btn-mini' %>
+        <%= link_to image_tag('Crud/editar1.png', :title => "Editar Equipos"), edit_empresa_path(empresa), :remote => true,
+          :class => 'btn btn-mini'%>
+	</td>
+</tr>
+
+
